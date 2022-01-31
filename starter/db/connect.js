@@ -1,3 +1,9 @@
-const connectDBString = 'mongodb+srv://Abduqahhor:<password>@nodeexpressproject.jcxlv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const mongoose = require("mongoose")
 
-module.exports = connectDBString
+const connectDB = (url) => {
+    return mongoose
+        .connect(url).then(()=>console.log("CONNECTED TO THE MONGO DB...")).catch((err) => console.log(err))
+}
+
+module.exports = connectDB
+
